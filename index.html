@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0a0506">
+<title>CLEOPATRE — OUR LOVE STORY ❤️</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Great+Vibes&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="fx"></canvas>
+<div id="yt"></div>
+<div id="balloons"></div>
+<button id="music" class="hidden">🎵 Music ON</button>
+
+<main>
+  <!-- -1. Verrou -->
+  <section id="lock" class="screen active">
+    <h1 class="script big">❤️</h1>
+    <p class="lead">Pour débloquer la surprise, écris le nom complet de ton amour<br>To unlock the surprise, write your love's full name</p>
+    <input id="lockInput" type="text" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="…">
+    <button class="btn" id="lockBtn">Déverrouiller / Unlock</button>
+    <p class="small" id="lockMsg">&nbsp;</p>
+    <p class="small" id="lockHint"></p>
+  </section>
+
+  <!-- 0. Langue -->
+  <section id="lang" class="screen">
+    <h1 class="script big">Cleopatre</h1>
+    <p class="small">Choisis ta langue · Choose your language</p>
+    <div class="row">
+      <button class="btn" data-lang="fr">🇫🇷 Français</button>
+      <button class="btn" data-lang="en">🇬🇧 English</button>
+    </div>
+  </section>
+
+  <!-- 1. Accueil -->
+  <section id="welcome" class="screen">
+    <h1 class="script big" data-t="hb"></h1>
+    <p class="lead" data-t="special"></p>
+    <button class="btn" id="start" data-t="start"></button>
+  </section>
+
+  <!-- 2. Notre histoire -->
+  <section id="story" class="screen">
+    <div id="photo"></div>
+    <p id="stext" class="lead"></p>
+    <div class="nav">
+      <button class="btn ghost" id="sprev" data-t="prev"></button>
+      <span id="scount" class="small"></span>
+      <button class="btn" id="snext"></button>
+    </div>
+  </section>
+
+  <!-- 3bis. Nos souvenirs -->
+  <section id="memories" class="screen">
+    <h2 class="script" data-t="memTitle"></h2>
+    <p class="small" data-t="memHint"></p>
+    <div id="memGrid"></div>
+    <button class="btn" id="memNext" data-t="toVideos"></button>
+  </section>
+
+  <!-- 4 + 5. Vidéos -->
+  <section id="videos" class="screen">
+    <h2 id="vtitle" class="script" data-t="vtitle"></h2>
+    <div id="vstage"></div>
+    <div class="nav">
+      <button class="btn ghost" id="vprev" data-t="prev"></button>
+      <span id="vcount" class="small"></span>
+      <button class="btn" id="vnext"></button>
+    </div>
+  </section>
+
+  <!-- 6. Jeu -->
+  <section id="game" class="screen">
+    <h2 class="script" data-t="gtitle"></h2>
+    <p class="small" id="gcount"></p>
+    <div id="garea"></div>
+    <div id="gcard" class="card"><p id="gmsg" class="lead"></p><button class="btn" id="gok">OK ❤️</button></div>
+    <div id="gdone" class="card"><h2 class="script" data-t="gfound"></h2><button class="btn" id="gift" data-t="gift"></button></div>
+  </section>
+
+  <!-- 7. Final -->
+  <section id="final" class="screen">
+    <div id="cake">🎂</div>
+    <h1 class="script big" data-t="fhb"></h1>
+    <p class="lead" data-t="fwish"></p>
+    <button class="btn" id="lastmsg" data-t="last"></button>
+    <button class="btn ghost" id="downloadCard" data-t="downloadCard"></button>
+
+    <div id="replyBox">
+      <p class="small" data-t="replyPrompt"></p>
+      <textarea id="replyText" rows="3"></textarea>
+      <button class="btn ghost" id="replySend" data-t="replySend"></button>
+    </div>
+  </section>
+</main>
+
+<!-- Lettre -->
+<div id="letter" class="overlay">
+  <div class="paper">
+    <div id="lwrap"><div id="lbody"></div><canvas id="scratchCanvas"></canvas></div>
+    <button class="btn ghost" id="lclose" data-t="close"></button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
